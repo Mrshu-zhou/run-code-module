@@ -1,0 +1,14 @@
+{
+  "name": "run-code-module",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "《网页上运行代码》运行链路模块：M1 呈现 / M2 调度 / M3 沙箱 / M4 输出 / M5 并发",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.9"
+  }
+}
