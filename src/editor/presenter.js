@@ -11,8 +11,12 @@ export function renderResult({
   error = null,
   button_state = 'READY',
   dialog = null,
+  editor_line_count = Infinity,
 }) {
   const text = truncated ? `${display_text}\n[输出已截断]` : display_text;
+  const line = error?.line_no;
+  const highlighted_line = line && line <= editor_line_count ? line : null;
+
   return {
     rendered: true,
     run_id,
@@ -21,7 +25,7 @@ export function renderResult({
     truncated,
     elapsed_ms,
     error,
-    highlighted_line: error?.line_no ?? null,
+    highlighted_line,
     button_state,
     dialog,
   };
